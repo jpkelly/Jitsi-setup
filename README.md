@@ -142,13 +142,13 @@ cd
 ```
 
 ### Edit `/etc/prosody/conf.avail/x.vevomo.com.cfg.lua` 
-in VirtualHost "<FQDN>"
+VirtualHost <FQDN>
 ```
         authentication = "token"
         app_id="<APP_ID>"
         app_secret="<APP_SECRET>"
 ```
-Create GuestVirtual Host
+Create guest VirtualHost
 ```
   VirtualHost "guest.x.vevomo.com"
     authentication = "anonymous"
