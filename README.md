@@ -60,7 +60,7 @@ reboot
 ## Failover to from 10000 to 443 is broken so ...
 From https://community.jitsi.org/t/coturn-chronicles/73099
 
-Edit `/etc/turnserver.conf`
+Edit `/etc/turnserver.conf` (added/changed lines at bottom)
 ```
 # jitsi-meet coturn config. Do not modify this line
 use-auth-secret
@@ -99,8 +99,8 @@ denied-peer-ip=203.0.113.0-203.0.113.255
 denied-peer-ip=240.0.0.0-255.255.255.255
 syslog
 
-cert=/etc/letsencrypt/live/turn.<FQDN>/fullchain.pem
-pkey=/etc/letsencrypt/live/turn.<FQDN>/privkey.pem
+cert=/etc/letsencrypt/live/<FQDN>/fullchain.pem
+pkey=/etc/letsencrypt/live/<FQDN>/privkey.pem
 external-ip=<PUBLICIP>/<PRIVATEIP>
 listening-ip=127.0.0.1
 allowed-peer-ip=<PRIVATEIP>
