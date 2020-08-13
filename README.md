@@ -25,7 +25,7 @@ Edit `/etc/hosts`
 <PUBLICIP> <FQDN> <SUBDOMAIN>
 ```
 
-## Upgrade Prosody first
+## Install Correct Version of Prosody first
 https://community.jitsi.org/t/how-to-how-do-i-update-prosody/72205
 
 
@@ -117,6 +117,7 @@ reboot
 ```
 ## Enable JWT
 
+Install lua components
 ```
 cd &&
 apt-get update -y &&
