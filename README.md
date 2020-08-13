@@ -141,7 +141,7 @@ luarocks install luajwtjitsi &&
 cd
 ```
 
-### Edit `/etc/prosody/conf.avail/x.vevomo.com.cfg.lua` 
+#### Edit `/etc/prosody/conf.avail/x.vevomo.com.cfg.lua` 
 VirtualHost <FQDN>
 ```
         authentication = "token"
