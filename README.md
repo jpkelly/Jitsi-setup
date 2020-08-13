@@ -25,7 +25,7 @@ sudo hostnamectl set-hostname <FQDN>
 <PUBLICIP> <FQDN> <SUBDOMAIN>
 ```
 
-## Install Correct Version of Prosody first
+## Install correct version of Prosody first
 https://community.jitsi.org/t/how-to-how-do-i-update-prosody/72205
 
 
