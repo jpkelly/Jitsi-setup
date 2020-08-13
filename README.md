@@ -140,3 +140,26 @@ luarocks make &&
 luarocks install luajwtjitsi &&
 cd
 ```
+
+### Edit `/etc/prosody/conf.avail/x.vevomo.com.cfg.lua` 
+in VirtualHost "<FQDN>"
+```
+        authentication = "token"
+        app_id="<APP_ID>"
+        app_secret="<APP_SECRET>"
+```
+Create GuestVirtual Host
+```
+  VirtualHost "guest.x.vevomo.com"
+    authentication = "anonymous"
+    modules_enabled = {
+            "bosh";
+            "pubsub";
+            "ping"; -- Enable mod_ping
+            "speakerstats";
+            "turncredentials";
+            "conference_duration";
+            "muc_lobby_rooms";
+        }
+    c2s_require_encryption = false
+```
