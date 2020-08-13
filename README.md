@@ -164,9 +164,9 @@ Create guest VirtualHost (without requiring auth)
     c2s_require_encryption = false
 ```
 
-#### Edit /etc/jitsi/meet/<FQDN>-config.js to enable anonymousdomain
+#### Edit `/etc/jitsi/meet/<FQDN>-config.js` to enable anonymousdomain
 ```
-anonymousdomain: 'guest.x.vevomo.com',
+anonymousdomain: 'guest.<FQDN>',
 ```
   
 #### Add to `/etc/jitsi/jicofo/sip-communicator.properties`
