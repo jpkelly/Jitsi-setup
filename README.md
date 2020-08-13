@@ -18,7 +18,6 @@ sudo hostnamectl set-hostname <FQDN>
 ```
   
 Edit `/etc/hosts`
-
 ```
 127.0.0.1 localhost
 <PUBLICIP> <FQDN> <SUBDOMAIN>
@@ -31,3 +30,17 @@ echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jit
 # update all package sources
 sudo apt update
 ```
+
+```
+sudo apt install jitsi-meet
+```
+
+```
+sudo /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
+```
+
+Edit `/etc/jitsi/videobridge/sip-communicator.properties`
+```
+org.ice4j.ice.harvest.DISABLE_AWS_HARVESTER=false
+```
+
