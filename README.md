@@ -1,5 +1,5 @@
 # Jitsi-setup
-Steps to set up Jitsi
+Steps to set up Jitsi from Jitsi Self Hosting Guide
 
 ```
 sudo -i
@@ -21,5 +21,13 @@ Edit `/etc/hosts`
 
 ```
 127.0.0.1 localhost
-x.x.x.x meet.example.org meet
+<PUBLICIP> <FQDN> <SUBDOMAIN>
+```
+
+```
+curl https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg'
+echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/' | sudo tee /etc/apt/sources.list.d/jitsi-stable.list > /dev/null
+
+# update all package sources
+sudo apt update
 ```
