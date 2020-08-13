@@ -1,5 +1,7 @@
-# Jitsi-setup
+# Jitsi-setup AWS EC2 Ubuntu Server 18.04 
 Steps to set up Jitsi from Jitsi Self Hosting Guide
+
+## Install Jitsi Meet
 
 ```
 sudo -i
