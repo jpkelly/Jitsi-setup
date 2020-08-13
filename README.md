@@ -105,3 +105,8 @@ external-ip=<PUBLICIP>/<PRIVATEIP>
 listening-ip=127.0.0.1
 allowed-peer-ip=<PRIVATEIP>
 no-udp
+```
+
+```
+reboot
+```
