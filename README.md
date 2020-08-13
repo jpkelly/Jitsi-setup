@@ -44,3 +44,13 @@ Edit `/etc/jitsi/videobridge/sip-communicator.properties`
 org.ice4j.ice.harvest.DISABLE_AWS_HARVESTER=false
 ```
 
+Edit `/etc/systemd/system.conf`
+```
+DefaultLimitNOFILE=65000
+DefaultLimitNPROC=65000
+DefaultTasksMax=65000
+```
+
+```
+reboot
+```
