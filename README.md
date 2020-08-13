@@ -174,3 +174,11 @@ anonymousdomain: 'guest.<FQDN>',
 org.jitsi.jicofo.auth.URL=EXT_JWT:<FQDN>
 ```
 
+#### Edit `/etc/prosody/prosody.cfg.lua`
+```
+admins = { }
+
+component_ports = { 5347 }
+component_interface = "0.0.0.0"
+```
+
