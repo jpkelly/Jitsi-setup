@@ -19,7 +19,7 @@ apt install apt-transport-https
 sudo hostnamectl set-hostname <FQDN>
 ```
   
-Edit `/etc/hosts`
+#### Edit `/etc/hosts`
 ```
 127.0.0.1 localhost
 <PUBLICIP> <FQDN> <SUBDOMAIN>
@@ -46,12 +46,12 @@ sudo apt install jitsi-meet
 sudo /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
 ```
 
-Edit `/etc/jitsi/videobridge/sip-communicator.properties`
+#### Edit `/etc/jitsi/videobridge/sip-communicator.properties`
 ```
 org.ice4j.ice.harvest.DISABLE_AWS_HARVESTER=false
 ```
 
-Edit `/etc/systemd/system.conf`
+#### Edit `/etc/systemd/system.conf`
 ```
 DefaultLimitNOFILE=65000
 DefaultLimitNPROC=65000
@@ -65,7 +65,7 @@ reboot
 ## Failover to from 10000 to 443 is broken so ...
 From https://community.jitsi.org/t/coturn-chronicles/73099
 
-Edit `/etc/turnserver.conf` (added/changed lines at bottom)
+#### Edit `/etc/turnserver.conf` (added/changed lines at bottom)
 ```
 # jitsi-meet coturn config. Do not modify this line
 use-auth-secret
@@ -141,16 +141,16 @@ luarocks install luajwtjitsi &&
 cd
 ```
 
-#### Edit `/etc/prosody/conf.avail/x.vevomo.com.cfg.lua` 
+#### Edit `/etc/prosody/conf.avail/<FQDN>.cfg.lua` 
 VirtualHost <FQDN>
 ```
         authentication = "token"
         app_id="<APP_ID>"
         app_secret="<APP_SECRET>"
 ```
-Create guest VirtualHost
+Create guest VirtualHost (without requiring auth)
 ```
-  VirtualHost "guest.x.vevomo.com"
+  VirtualHost "guest.<FQDN>"
     authentication = "anonymous"
     modules_enabled = {
             "bosh";
@@ -163,3 +163,14 @@ Create guest VirtualHost
         }
     c2s_require_encryption = false
 ```
+
+#### Edit /etc/jitsi/meet/<FQDN>-config.js to enable anonymousdomain
+```
+anonymousdomain: 'guest.x.vevomo.com',
+```
+  
+#### Add to `/etc/jitsi/jicofo/sip-communicator.properties`
+```
+org.jitsi.jicofo.auth.URL=EXT_JWT:<FQDN>
+```
+
