@@ -58,3 +58,4 @@ reboot
 ```
 
 ## Failover to from 10000 to 443 is broken so ...
+From https://community.jitsi.org/t/coturn-chronicles/73099
