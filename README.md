@@ -74,8 +74,8 @@ use-auth-secret
 keep-address-family
 static-auth-secret=<VERYSECRET>
 realm=<FQDN>
-#cert=/etc/coturn/certs/<FQDN>.fullchain.pem
-#pkey=/etc/coturn/certs/<FQDN>.privkey.pem
+##cert=/etc/coturn/certs/<FQDN>.fullchain.pem
+##pkey=/etc/coturn/certs/<FQDN>.privkey.pem
 no-multicast-peers
 no-cli
 no-loopback-peers
@@ -83,7 +83,7 @@ no-tcp-relay
 no-tcp
 listening-port=3478
 tls-listening-port=5349
-#external-ip=<PUBLICIP>
+##external-ip=<PUBLICIP>
 no-tlsv1
 no-tlsv1_1
 # https://ssl-config.mozilla.org/#server=haproxy&version=2.1&config=intermediate&openssl=1.1.0g&guideline=5.4
