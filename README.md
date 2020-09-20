@@ -185,4 +185,4 @@ component_interface = "0.0.0.0"
 ```
 
 ## Token Moderator Plugin
-https://github.com/nvonahsen/jitsi-token-moderation-plugin/blob/master/mod_token_moderation.lua
+https://github.com/nvonahsen/jitsi-token-moderation-plugin
