@@ -186,3 +186,16 @@ component_interface = "0.0.0.0"
 
 ## Token Moderator Plugin
 https://github.com/nvonahsen/jitsi-token-moderation-plugin
+
+
+## Improve SSL Labs Rating (B to A)
+```
+mkdir /etc/nginx/ssl
+openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
+```
+
+#### Edit `/etc/turnsurver.conf` add
+```
+dh-file=/etc/nginx/ssl/dhparam.pem
+cipher-list="ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AES:RSA+3DES:!ADH:!AECDH:!MD5"
+```
